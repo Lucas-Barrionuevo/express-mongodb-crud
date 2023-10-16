@@ -35,7 +35,9 @@ const connectToDatabase = async () => {
   };
 
   const mongooseInstance = await mongoose.connect(
-    `mongodb://localhost/crud-mongo`,
+    `${MONGO_CONNECTION_TYPE}://${
+      MONGO_USERNAME && `${MONGO_USERNAME}:${MONGO_PASSWORD}@`
+    }${MONGO_HOST}/${MONGO_DATABASE}?retryWrites=true&w=majority`,
     mongoOptions
   );
 

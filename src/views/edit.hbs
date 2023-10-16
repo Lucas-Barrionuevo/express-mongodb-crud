@@ -6,6 +6,7 @@
         <form action="/tasks/{{task._id}}/edit" method="POST">
 
           <div class="mb-3">
+            <label for="title">Write a title:</label>
             <input
             type="text"
             name="title"
@@ -16,10 +17,10 @@
           </div>
 
           <div class="mb-3">
-            
+            <label for="description">Description:</label>
             <textarea
             name="description"
-            rows="3"
+            rows="1"
             placeholder="Add a description"
             class="form control rounded-0 bg-dark text-white"
             >{{task.description}}</textarea>
